@@ -104,8 +104,8 @@
             "QSpiFlash",
             "SpiSD"
         ],
-        "not_labeledsystem": [
-            "not_labeledsystem"
+        "Filesystem": [
+            "Filesystem"
         ],
         "MCU": [
             "MCU_Reset"
