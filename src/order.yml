@@ -373,7 +373,7 @@ examples:
     folder: dist/examples/Powersaving
     hint: Powersaving
   - title: Watchdogs
-    name: Math
+    name: Watchdogs
     folder: dist/examples/Watchdogs
     hint: Watchdogs
   - title: VM Exceptions
