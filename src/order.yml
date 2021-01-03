@@ -1,0 +1,386 @@
+root:
+  - title: First Step
+    tag: first_step
+    hint: First Step
+    tags:
+    - title: Basics
+      tag: first_step.basics
+      hint: Basics
+      examples:
+      - Hello_Zerynth
+      - Blink
+      - Digital_Read
+      - Analog_To_Digital_Acquisition
+      - Analog_To_Digital_Voltage_Conversion
+      - Oscilloscope
+      - Serial_Port_Read-Write_Basics
+      - Sensor_Driven_Multi_Blink
+    - title: Advanced
+      tag: first_step.advanced
+      hint: Advanced
+      examples:
+      - Multi_Thread_Basic
+      - Multi_Blink
+      - Serial_Port_Read-Write_Advanced
+      - Input_Capture_Unit
+      - Timers_Basics
+  - title: Standard Library
+    tag: standard_library
+    hint: Standard Library
+    tags:
+    - title: Strings
+      tag: standard_library.strings 
+      hint: Strings
+      examples:
+      - Strings_Format
+    - title: Serial
+      tag: standard_library.serial 
+      hint: Serial
+      examples:
+      - Serial_Port_Read-Write_Basics
+      - Serial_Port_Read-Write_Advanced
+    - title: DIO
+      tag: standard_library.dio 
+      hint: DIO
+      examples:
+      - Digital_Read
+      - Blink
+    - title: ADC
+      tag: standard_library.adc
+      hint: ADC
+      examples:
+      - Analog_To_Digital_Acquisition
+      - Analog_To_Digital_Voltage_Conversion
+      - Oscilloscope
+      - Sensor_Driven_Multi_Blink
+    - title: DAC
+      tag: standard_library.dac
+      hint: DAC
+      examples:
+      - Dac_Basic
+    - title: PWM
+      tag: standard_library.pwm
+      hint: PWM
+      examples:
+      - Buzzer_with_PWM
+      - PWM_Fade
+    - title: ICU
+      tag: standard_library.icu
+      hint: ICU
+      examples:
+      - Input_Capture_Unit
+      - InfraRed_Raw_Capture
+    - title: Timers 
+      tag: standard_library.timers
+      hint: Timers
+      examples:
+      - Timers_Basics
+      - Timers_Advanced
+    - title: Threads 
+      tag: standard_library.threads 
+      hint: Threads 
+      examples:
+      - Multi_Thread_Basic
+      - Multi_Blink
+      - Sensor_Driven_Multi_Blink
+      - Queues
+    - title: Interrupts
+      tag: standard_library.interrupts 
+      hint: Interrupts
+      examples:
+      - Interrupts 
+      - Interrupts_Debounce
+    - title: Exceptions-Debugger
+      tag: exceptions_debugger
+      hint: Exceptions-Debugger
+      examples:
+      - Exceptions-Debugger
+  - title: Math
+    tag: math 
+    hint: Math
+    tags:
+    - title: Networking
+      tag: math.networking
+      hint: Networking
+      examples:
+      - Mini_Web_Server
+      - UDP_Pinger
+      - UDP_NTP_Time
+      - Wifi_Scan
+      - HTTP_Time
+      - HTTP_Weather
+      - HTTP_Methods
+      - Secure_HTTP
+    examples:
+    - Math
+  - title: NTPClient
+    tag: ntpclient 
+    hint: NTPClient
+    tags:
+    - title: Security
+      tag: ntpclient.security
+      hint: Security 
+      examples: 
+      - Secure_HTTP
+    - title: RTC 
+      tag: ntp_client.rtc 
+      hint: RTC 
+      examples:
+      - RTC_Keep_Time
+    - title: Resources
+      tag: ntp_client.resources 
+      hint: Resources
+      examples:
+      - Resources
+    examples:
+    - ntp_client
+  - title: Struct
+    tag: struct 
+    hint: Struct
+    tags:
+    - title: Flash & SD
+      tag: struct.flash_&_sd 
+      hint: Flash & SD
+      examples:
+      - Flash_Internal
+      - SpiFlash
+      - QSpiFlash
+      - SpiSD
+    - title: Filesystem
+      tag: struct.filesystem 
+      hint: Filesystem
+      examples:
+      - Filesystem
+    - title: MCU
+      tag: struct.mcu 
+      hint: MCU
+      examples: 
+      - MCU_Reset
+    - title: Calling C
+      tag: struct.calling_c
+      hint: Calling C 
+      examples:
+      - C_Language_Interface
+    examples:
+    - Struct
+  - title: Cryptography
+    tag: cryptography 
+    hint: Cryptography
+    tags:
+    - title: Powersaving
+      tag: cryptography.powersaving 
+      hint: Powersaving
+      examples: 
+      - Powersaving
+    - title: Secure Firmware
+      tag: cryptography.secure_firmware 
+      hint: Secure Firmware
+      examples: 
+      - Watchdogs
+    examples:
+    - Crypto_Hash
+    - Crypto_ECC
+  - title: VM
+    tag: vm 
+    hint: VM
+    examples:
+    - VM_Exceptions
+    - VM_HardFault
+      
+examples:
+  - title: Hello Zerynth 
+    name: Hello_Zerynth
+    folder: dist/examples/Hello_Zerynth
+    hint: Hello Zerynth 
+  - title: Blink
+    name: Blink
+    folder: dist/examples/Blink
+    hint: Blink 
+  - title: Digital Read
+    name: Digital_Read
+    folder: dist/examples/Digital_Read
+    hint: Digital Read 
+  - title: Analog To Digital Acquisition
+    name: Analog_To_Digital_Acquisition
+    folder: dist/examples/Analog_To_Digital_Acquisition
+    hint: Analog To Digital Acquisition 
+  - title: Analog To Digital Voltage Conversion
+    name: Analog_To_Digital_Voltage_Conversion
+    folder: dist/examples/Analog_To_Digital_Voltage_Conversion
+    hint: Analog To Digital Voltage Conversion 
+  - title: Oscilloscope
+    name: Oscilloscope
+    folder: dist/examples/Oscilloscope
+    hint: Oscilloscope
+  - title: Serial Port Read-Write Basics
+    name: Serial_Port_Read-Write_Basics
+    folder: dist/examples/Serial_Port_Read-Write_Basics
+    hint: Serial Port Read-Write Basics 
+  - title: Sensor Driven Multi Blink
+    name: Sensor_Driven_Multi_Blink
+    folder: dist/examples/Sensor_Driven_Multi_Blink
+    hint: Sensor Driven Multi Blink 
+  - title: Multi Thread Basic
+    name: Multi_Thread_Basic
+    folder: dist/examples/Multi_Thread_Basic
+    hint: Multi Thread Basic 
+  - title: Multi Blink
+    name: Multi_Blink
+    folder: dist/examples/Multi_Blink
+    hint: Multi Blink 
+  - title: Serial Port Read-Write Advanced
+    name: Serial_Port_Read-Write_Advanced
+    folder: dist/examples/Serial_Port_Read-Write_Advanced
+    hint: Serial Port Read-Write Advanced 
+  - title: Input Capture Unit
+    name: Input_Capture_Unit
+    folder: dist/examples/Input_Capture_Unit
+    hint: Input Capture Unit 
+  - title: Timers Basics
+    name: Timers_Basics
+    folder: dist/examples/Timers_Basics
+    hint: Timers Basics
+  - title: Strings Format
+    name: Strings_Format
+    folder: dist/examples/Strings_Format
+    hint: Strings Format 
+  - title: Dac Basic
+    name: Dac_Basic
+    folder: dist/examples/Dac_Basic
+    hint: Dac Basic 
+  - title: Buzzer with PWM
+    name: Buzzer_with_PWM
+    folder: dist/examples/Buzzer_with_PWM
+    hint: Buzzer with PWM 
+  - title: PWM Fade
+    name: PWM_Fade
+    folder: dist/examples/PWM_Fade
+    hint: PWM Fade
+  - title: InfraRed Raw Capture
+    name: InfraRed_Raw_Capture
+    folder: dist/examples/InfraRed_Raw_Capture
+    hint: InfraRed Raw Capture 
+  - title: Timers Advanced
+    name: Timers_Advanced
+    folder: dist/examples/Timers_Advanced
+    hint: Timers Advanced
+  - title: Queues
+    name: Queues
+    folder: dist/examples/Queues
+    hint: Queues
+  - title: Interrupts
+    name: Interrupts
+    folder: dist/examples/Interrupts
+    hint: Interrupts
+  - title: Interrupts Debounce
+    name: Interrupts_Debounce
+    folder: dist/examples/Interrupts_Debounce
+    hint: Interrupts Debounce
+  - title: Exceptions-Debugger 
+    name: Exceptions-Debugger
+    folder: dist/examples/Exceptions-Debugger
+    hint: Exceptions-Debugger
+  - title: Math
+    name: Math
+    folder: dist/examples/Math
+    hint: Math
+  - title: Mini Web Server
+    name: Mini_Web_Server
+    folder: dist/examples/Mini_Web_Server
+    hint: Mini Web Server 
+  - title: UDP Pinger
+    name: UDP_Pinger
+    folder: dist/examples/UDP_Pinger
+    hint: UDP Pinger
+  - title: UDP NTP Time
+    name: UDP_NTP_Time
+    folder: dist/examples/UDP_NTP_Time
+    hint: UDP NTP Time 
+  - title: Wifi Scan
+    name: Wifi_Scan
+    folder: dist/examples/Wifi_Scan
+    hint: Wifi Scan
+  - title: HTTP Time
+    name: HTTP_Time
+    folder: dist/examples/HTTP_Time
+    hint: HTTP Time
+  - title: HTTP Weather
+    name: HTTP_Weather
+    folder: dist/examples/HTTP_Weather
+    hint: HTTP Weather
+  - title: HTTP Methods
+    name: HTTP_Methods
+    folder: dist/examples/HTTP_Methods
+    hint: HTTP Methods
+  - title: Secure HTTP
+    name: Secure_HTTP
+    folder: dist/examples/Secure_HTTP
+    hint: Secure HTTP
+  - title: ntp client
+    name: ntp_client
+    folder: dist/examples/ntp_client
+    hint: ntp client
+  - title: RTC Keep Time
+    name: RTC_Keep_Time
+    folder: dist/examples/RTC_Keep_Time
+    hint: RTC Keep Time
+  - title: Resources
+    name: Resources
+    folder: dist/examples/Resources
+    hint: Resources
+  - title: Struct
+    name: Struct
+    folder: dist/examples/Struct
+    hint: Struct
+  - title: Flash Internal
+    name: Flash_Internal
+    folder: dist/examples/Flash_Internal
+    hint: Flash Internal
+  - title: SpiFlash
+    name: SpiFlash
+    folder: dist/examples/SpiFlash
+    hint: SpiFlash
+  - title: QSpiFlash
+    name: QSpiFlash
+    folder: dist/examples/QSpiFlash
+    hint: QSpiFlash
+  - title: SpiSD
+    name: SpiSD
+    folder: dist/examples/SpiSD
+    hint: SpiSD
+  - title: Filesystem
+    name: Filesystem
+    folder: dist/examples/Filesystem
+    hint: Filesystem
+  - title: MCU Reset
+    name: MCU_Reset
+    folder: dist/examples/MCU_Reset
+    hint: MCU Reset
+  - title: C Language Interface
+    name: C_Language_Interface
+    folder: dist/examples/C_Language_Interface
+    hint: C Language Interface
+  - title: Crypto Hash
+    name: Crypto_Hash
+    folder: dist/examples/Crypto_Hash
+    hint: Crypto Hash
+  - title: Crypto ECC
+    name: Crypto_ECC
+    folder: dist/examples/Crypto_ECC
+    hint: Crypto ECC
+  - title: Powersaving
+    name: Powersaving
+    folder: dist/examples/Powersaving
+    hint: Powersaving
+  - title: Watchdogs
+    name: Watchdogs
+    folder: dist/examples/Watchdogs
+    hint: Watchdogs
+  - title: VM Exceptions
+    name: VM_Exceptions
+    folder: dist/examples/VM_Exceptions
+    hint: VM Exceptions
+  - title: VM HardFault
+    name: VM_HardFault
+    folder: dist/examples/VM_HardFault
+    hint: VM HardFault
