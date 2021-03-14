@@ -1,0 +1,3 @@
+config:
+  ZERYNTH_EARLY_WATCHDOG: 5000
+
