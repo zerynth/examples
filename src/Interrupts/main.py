@@ -1,37 +1,29 @@
 ################################################################################
-# Interrupt Basics
-#
-# Created by Zerynth Team 2015 CC
-# Authors: G. Baldi, D. Mazzei
+# Interrupts
 ################################################################################
 
-import streams
-
-# create a serial port stream with default parameters
-streams.serial()
-
-# define where the button and the LED are connected
-# in this case BTN0 will be automatically configured according to the selected board button
-# change this definition to connect external buttons on any other digital pin
-buttonPin=BTN0 
-ledPin=LED0  # LED0 will be configured to the selected board led
-
-# configure the pin behaviour to drive the LED and to read from the button  
-pinMode(buttonPin,INPUT_PULLUP)
-pinMode(ledPin,OUTPUT)
-
-# define the function to be called when the button is pressed
-def pressed():
-        print("touched!")
-        digitalWrite(ledPin,HIGH) # just blink the LED for 100 millisec when the button is pressed
-        sleep(100)
-        digitalWrite(ledPin,LOW)
-
-# attach an interrupt on the button pin and call the pressed function when it falls
-# being BTN0 configured as pullup, when the button is pressed the signal goes to from HIGH to LOW.
-# opposite behaviour can be obtained with the equivalent "rise" interrupt function: onPinRise(pin,fun)
-# hint: onPinFall and onPinRise can be used together on the same pin, even with different functions
-onPinFall(buttonPin,pressed)
+from bsp import board
+import gpio
 
 
+touches = 0
+button = USER_BUTTON
 
+# Let's define a function that will be called when the button changes state
+# The gpio and the value of the gpio are passed to the function by the system
+def on_touch(pin, value):
+    global touches
+    if value != 0:
+        touches += 1
+        print("touched",touches,"times")
+
+# Let's attach the function to the user button.
+# Also, set a debounce: an event is generated only if the new state of the button
+# is maintained for a period of time (300 millis). This avoid spurious state changes
+# and noise.
+gpio.on_rise(USER_BUTTON,on_touch,debounce=300)
+
+
+# Wait forever for the button to be pressed
+while True:
+    sleep(1000)
