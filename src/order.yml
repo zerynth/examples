@@ -17,6 +17,10 @@ root:
       examples:
       - C_Language_Interface
       - Watchdogs
+  - title: 4ZeroBox
+    tag: four_zero_box
+    hint: 4ZeroBox
+    examples: Hello_4ZeroBox
   # - title: Standard Library
   #   tag: standard_library
   #   hint: Standard Library
@@ -229,3 +233,7 @@ examples:
     name: Watchdogs
     folder: dist/examples/Watchdogs
     hint: Watchdogs
+  - title: Hello 4ZeroBox
+    name: Hello_4ZeroBox
+    folder: dist/examples/Hello_4ZeroBox
+    hint: Hello 4ZeroBox
