@@ -179,6 +179,18 @@ root:
   #   examples:
   #   - VM_Exceptions
   #   - VM_HardFault
+  - title: zDeviceManager
+    tag: ZDM
+    hint: Zerynth Device Manager
+    tags:
+      - title: Basic
+        tag: zdm
+        hint: zdm
+        examples:
+          - ZDM_Simple
+          - ZDM_Jobs
+          - ZDM_Conditions
+
 
 examples:
   - title: Hello Zerynth
@@ -229,3 +241,16 @@ examples:
     name: Watchdogs
     folder: dist/examples/Watchdogs
     hint: Watchdogs
+  - title: zDeviceManager connect
+    name: ZDM_Simple
+    folder: dist/examples/ZDM_Simple
+    hint: ZDM
+  - title: zDeviceManager jobs
+    name: ZDM_Jobs
+    folder: dist/examples/ZDM_Jobs
+    hint: ZDM
+  - title: zDeviceManager conditions
+    name: ZDM_Conditions
+    folder: dist/examples/ZDM_Conditions
+    hint: ZDM
+
