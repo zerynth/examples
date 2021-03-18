@@ -183,7 +183,24 @@ root:
   #   examples:
   #   - VM_Exceptions
   #   - VM_HardFault
-
+  - title: Zerynth Device Manager
+    tag: ZDM
+    hint: Zerynth Device Manager
+    tags:
+      - title: Basic
+        tag: zdm
+        hint: zdm
+        examples:
+          - ZDM_Simple
+          - ZDM_Jobs
+          - ZDM_Conditions
+  - title: 4ZeroBox
+    tag: 4ZeroBox
+    hint: 4ZeroBox
+    examples: 
+    - Hello_4ZeroBox
+    - ADC_sensor_reading_4ZeroBox
+          
 examples:
   - title: Hello Zerynth
     name: Hello_Zerynth
@@ -233,7 +250,23 @@ examples:
     name: Watchdogs
     folder: dist/examples/Watchdogs
     hint: Watchdogs
+  - title: ZDM Simple
+    name: ZDM_Simple
+    folder: dist/examples/ZDM_Simple
+    hint: ZDM Simple
+  - title: ZDM Jobs
+    name: ZDM_Jobs
+    folder: dist/examples/ZDM_Jobs
+    hint: ZDM Jobs
+  - title: ZDM Conditions
+    name: ZDM_Conditions
+    folder: dist/examples/ZDM_Conditions
+    hint: ZDM Conditions
   - title: Hello 4ZeroBox
     name: Hello_4ZeroBox
     folder: dist/examples/Hello_4ZeroBox
     hint: Hello 4ZeroBox
+  - title: Sensor reading
+    name: ADC_sensor_reading_4ZeroBox
+    folder: dist/examples/ADC_sensor_reading_4ZeroBox
+    hint: Sensor reading
