@@ -60,7 +60,7 @@ try:
     board.set_conversion_resistive(1, -50, ref_table, 5)    # (ch, v_min, ref_table, delta, offset=0)
     board.set_conversion_resistive(2, -50, ref_table, 5)
     board.set_conversion_resistive(3, -50, ref_table, 5)
-    board.set_conversion_current(1, 150, 1, 3000, 230, 0)   # (ch, n_samples=400, ncoil=1, ratio=2000, voltage=220, offset=0)
+    board.set_conversion_current(1, 1, 3000, 230, 0)        # (ch, n_samples=400, ncoil=1, ratio=2000, voltage=220, offset=0)
     print("adc config done")
 except Exception as e:
     print(e)
