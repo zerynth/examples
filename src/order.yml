@@ -17,6 +17,7 @@ root:
       examples:
       - C_Language_Interface
       - Watchdogs
+      - Wifi_http
   - title: 4ZeroBox
     tag: four_zero_box
     hint: 4ZeroBox
@@ -250,6 +251,10 @@ examples:
     name: Watchdogs
     folder: dist/examples/Watchdogs
     hint: Watchdogs
+  - title: Wifi http
+    name: Wifi_http
+    folder: dist/examples/Wifi_http
+    hint: Wifi http
   - title: ZDM Simple
     name: ZDM_Simple
     folder: dist/examples/ZDM_Simple
