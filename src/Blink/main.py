@@ -1,21 +1,29 @@
 ###############################################################################
 # Led Blink
-#
-# Created by Zerynth Team 2015 CC
-# Authors: G. Baldi, D. Mazzei
 ###############################################################################
 
-# D0 to D127 represent the names of digital pins
-# On most Arduino-like boards Pin D13 has an on-board LED connected.
-# However Zerynth abstracts the board layout allowing to use LED0, LED1, etc as led names.
-# In this example LED0 is used.
+# Let's blink some led with threads.
 
-pinMode(LED0,OUTPUT)
+# First, import the board module from the bsp (board support package)
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware without changing a line of code
+from bsp import board
+# import the gpio control module
+import gpio
 
-# loop forever
-while True:
-    digitalWrite(LED0, HIGH)  # turn the LED ON by setting the voltage HIGH
-    sleep(1000)               # wait for a second
-    digitalWrite(LED0, LOW)   # turn the LED OFF by setting the voltage LOW
-    sleep(1000)               # wait for a second
+# Let's define a function to blink a led with some delay
+def blink(led, delay):
+    while True:
+        sleep(delay)
+        gpio.toggle(led)
+
+
+# now let's start two threads, one blinking the blue led
+# and one blinking the green led
+
+thread(blink, LED_BLUE, 1000)
+thread(blink, LED_GREEN, 2000)
+
+# the two threads are now running independently with different delays.
+# the RGB led will turn alternately BLUE and GREEN and CYAN
 

@@ -1,17 +1,14 @@
 ###############################################################################
 # Hello Zerynth
-#
-# Created by Zerynth Team 2015 CC
-# Authors: G. Baldi, D. Mazzei
 ###############################################################################
 
-# import the streams module, it is needed to send data around
-import streams
-
-# open the default serial port, the output will be visible in the serial console
-streams.serial()  
+# Welcome to the first and simplest Zerynth example.
+# Let's just loop forever by printing something to the standard output,
+# in this case, the USB serial port (open the device console to view the output)
 
 # loop forever
 while True:
-    print("Hello Zerynth!")   # print automatically knows where to print!
+    # print something
+    print("Hello Zerynth!")
+    # sleep 1 second
     sleep(1000)
