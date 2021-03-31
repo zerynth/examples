@@ -17,173 +17,12 @@ root:
       examples:
       - C_Language_Interface
       - Watchdogs
+      - Spi
+      - I2c
+      - FileSystem_internal
+      - FileSystem_sdcard
+      - Ethernet_http
       - Wifi_http
-  - title: 4ZeroBox
-    tag: four_zero_box
-    hint: 4ZeroBox
-    examples: Hello_4ZeroBox
-  # - title: Standard Library
-  #   tag: standard_library
-  #   hint: Standard Library
-  #   tags:
-  #   - title: Strings
-  #     tag: standard_library.strings
-  #     hint: Strings
-  #     examples:
-  #     - Strings_Format
-  #   - title: Serial
-  #     tag: standard_library.serial
-  #     hint: Serial
-  #     examples:
-  #     - Serial_Port_Read-Write_Basics
-  #     - Serial_Port_Read-Write_Advanced
-  #   - title: DIO
-  #     tag: standard_library.dio
-  #     hint: DIO
-  #     examples:
-  #     - Digital_Read
-  #     - Blink
-  #   - title: ADC
-  #     tag: standard_library.adc
-  #     hint: ADC
-  #     examples:
-  #     - Analog_To_Digital_Acquisition
-  #     - Analog_To_Digital_Voltage_Conversion
-  #     - Oscilloscope
-  #     - Sensor_Driven_Multi_Blink
-  #   - title: DAC
-  #     tag: standard_library.dac
-  #     hint: DAC
-  #     examples:
-  #     - Dac_Basic
-  #   - title: PWM
-  #     tag: standard_library.pwm
-  #     hint: PWM
-  #     examples:
-  #     - Buzzer_with_PWM
-  #     - PWM_Fade
-  #   - title: ICU
-  #     tag: standard_library.icu
-  #     hint: ICU
-  #     examples:
-  #     - Input_Capture_Unit
-  #     - InfraRed_Raw_Capture
-  #   - title: Timers
-  #     tag: standard_library.timers
-  #     hint: Timers
-  #     examples:
-  #     - Timers_Basics
-  #     - Timers_Advanced
-  #   - title: Threads
-  #     tag: standard_library.threads
-  #     hint: Threads
-  #     examples:
-  #     - Multi_Thread_Basic
-  #     - Multi_Blink
-  #     - Sensor_Driven_Multi_Blink
-  #     - Queues
-  #   - title: Interrupts
-  #     tag: standard_library.interrupts
-  #     hint: Interrupts
-  #     examples:
-  #     - Interrupts
-  #     - Interrupts_Debounce
-  #   - title: Exceptions-Debugger
-  #     tag: exceptions_debugger
-  #     hint: Exceptions-Debugger
-  #     examples:
-  #     - Exceptions-Debugger
-  # - title: Math
-  #   tag: math
-  #   hint: Math
-  #   tags:
-  #   - title: Networking
-  #     tag: math.networking
-  #     hint: Networking
-  #     examples:
-  #     - Mini_Web_Server
-  #     - UDP_Pinger
-  #     - UDP_NTP_Time
-  #     - Wifi_Scan
-  #     - HTTP_Time
-  #     - HTTP_Weather
-  #     - HTTP_Methods
-  #     - Secure_HTTP
-  #   examples:
-  #   - Math
-  # - title: NTPClient
-  #   tag: ntpclient
-  #   hint: NTPClient
-  #   tags:
-  #   - title: Security
-  #     tag: ntpclient.security
-  #     hint: Security
-  #     examples:
-  #     - Secure_HTTP
-  #   - title: RTC
-  #     tag: ntp_client.rtc
-  #     hint: RTC
-  #     examples:
-  #     - RTC_Keep_Time
-  #   - title: Resources
-  #     tag: ntp_client.resources
-  #     hint: Resources
-  #     examples:
-  #     - Resources
-  #   examples:
-  #   - ntp_client
-  # - title: Struct
-  #   tag: struct
-  #   hint: Struct
-  #   tags:
-  #   - title: Flash & SD
-  #     tag: struct.flash_&_sd
-  #     hint: Flash & SD
-  #     examples:
-  #     - Flash_Internal
-  #     - SpiFlash
-  #     - QSpiFlash
-  #     - SpiSD
-  #   - title: Filesystem
-  #     tag: struct.filesystem
-  #     hint: Filesystem
-  #     examples:
-  #     - Filesystem
-  #   - title: MCU
-  #     tag: struct.mcu
-  #     hint: MCU
-  #     examples:
-  #     - MCU_Reset
-  #   - title: Calling C
-  #     tag: struct.calling_c
-  #     hint: Calling C
-  #     examples:
-  #     - C_Language_Interface
-  #   examples:
-  #   - Struct
-  # - title: Cryptography
-  #   tag: cryptography
-  #   hint: Cryptography
-  #   tags:
-  #   - title: Powersaving
-  #     tag: cryptography.powersaving
-  #     hint: Powersaving
-  #     examples:
-  #     - Powersaving
-  #   - title: Secure Firmware
-  #     tag: cryptography.secure_firmware
-  #     hint: Secure Firmware
-  #     examples:
-  #     - Watchdogs
-  #   examples:
-  #   - Crypto_Hash
-  #   - Crypto_ECC
-  # - title: VM
-  #   tag: vm
-  #   hint: VM
-  #   examples:
-  #   - VM_Exceptions
-  #   - VM_HardFault
   - title: Zerynth Device Manager
     tag: ZDM
     hint: Zerynth Device Manager
@@ -201,6 +40,9 @@ root:
     examples: 
     - Hello_4ZeroBox
     - ADC_sensor_reading_4ZeroBox
+    - 4ZeroBox_meets_ZDM_wifi
+    - 4ZeroBox_meets_ZDM_ethernet
+    - Firmware_over_the_air_update
           
 examples:
   - title: Hello Zerynth
@@ -275,3 +117,35 @@ examples:
     name: ADC_sensor_reading_4ZeroBox
     folder: dist/examples/ADC_sensor_reading_4ZeroBox
     hint: Sensor reading
+  - title: 4ZeroBox meets ZDM wifi
+    name: 4ZeroBox_meets_ZDM_wifi
+    folder: dist/examples/4ZeroBox_meets_ZDM_wifi
+    hint: 4ZeroBox meets ZDM wifi
+  - title: 4ZeroBox meets ZDM ethernet
+    name: 4ZeroBox_meets_ZDM_ethernet
+    folder: dist/examples/4ZeroBox_meets_ZDM_ethernet
+    hint: 4ZeroBox meets ZDM ethernet
+  - title: Firmware over the air update
+    name: Firmware_over_the_air_update
+    folder: dist/examples/Firmware_over_the_air_update
+    hint: Firmware over the air update
+  - title: Ethernet http
+    name: Ethernet_http
+    folder: dist/examples/Ethernet_http
+    hint: Ethernet http
+  - title: FileSystem internal
+    name: FileSystem_internal
+    folder: dist/examples/FileSystem_internal
+    hint: FileSystem internal
+  - title: FileSystem sdcard
+    name: FileSystem_sdcard
+    folder: dist/examples/FileSystem_sdcard
+    hint: FileSystem sdcard
+  - title: Spi
+    name: Spi
+    folder: dist/examples/Spi
+    hint: Spi
+  - title: I2c
+    name: I2c
+    folder: dist/examples/I2c
+    hint: I2c

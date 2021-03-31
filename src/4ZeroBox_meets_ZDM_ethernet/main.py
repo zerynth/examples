@@ -1,10 +1,10 @@
 ###############################################################################
-# 4ZeroBox meets ZDM
+# 4ZeroBox meets ZDM ethernet
 ###############################################################################
 
 ################################## IMPORT SECTION ###############################
 from bsp import board
-from networking import wifi
+from networking import eth
 from zdm import zdm
 import threading as th
 import watchdog
@@ -19,10 +19,6 @@ ready = True
 
 # Set Watchdog timeout
 watchdog.setup(60000)
-
-################################### NETWORKING ################################
-SSID = "Zerynth"
-PASSWORD = "TOIZerynth2021"
 
 ############################### THREAD DEFINITIONS ############################
 def pub_event_handler():
@@ -65,11 +61,11 @@ def pub_event_handler():
 
 ###################################### INIT 4ZB and ZDM ######################################
 try:
-    # Connection to wifi network
-    print("1 - Connecting to wifi ...")
-    wifi.configure(SSID, PASSWORD)
-    wifi.start()
-    print("connected!",wifi.info())
+    # Connection to network
+    print("1 - Connecting ...")
+    eth.configure(dhcp=True)
+    eth.start()
+    print("connected!", eth.info)
 
     # Connection to ZDM
     print("2 - Connecting to ZDM ...")
@@ -96,7 +92,7 @@ try:
     # Main Loop
     while True:
         sleep(1000)
-        print("WiFi is online:   ", wifi.info())
+        print("Connection is online:   ", eth.info())
         print("ZDM is online:    ", device.online())
         # Sync between main thread and pub_event_handler thread
         if ready:
