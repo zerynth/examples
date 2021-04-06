@@ -40,6 +40,7 @@ root:
     examples: 
     - Hello_4ZeroBox
     - ADC_sensor_reading_4ZeroBox
+    - 4ZeroBox_modbus_serial_interface
     - 4ZeroBox_meets_ZDM_wifi
     - 4ZeroBox_meets_ZDM_ethernet
     - Firmware_over_the_air_update
@@ -149,3 +150,7 @@ examples:
     name: I2c
     folder: dist/examples/I2c
     hint: I2c
+  - title: 4ZeroBox modbus serial interface
+    name: 4ZeroBox_modbus_serial_interface
+    folder: dist/examples/4ZeroBox_modbus_serial_interface
+    hint: 4ZeroBox modbus serial interface
