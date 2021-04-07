@@ -5,29 +5,23 @@
 import fs
 
 while True:
-    fs.mount("/mnt", 0)
+    fs.mount("/sd", fs.SD, 10000000)
 
-    #read and write an existing file
-    f = fs.FileIO("mnt/test.txt", "r")
+    #read an existing file
+    f = fs.open("/sd/test.txt", "r")
     print(f.read())
-    f.close()
-
-    f = fs.FileIO("/mnt/test.txt","w")
-    f.write("first row: test 01")
-    f.write("second row: test 02")
-    print(f.readline())
-    print(f.readline())
     f.close()
     
     # create a new file and read it back
-    f = fs.FileIO("/mnt/test02.txt","w")
-    f.write("Hello Zerynth!")
+    f = fs.open("/sd/test02.txt","w")
+    f.write("first row: test 01\n")
+    f.write("second row: test 02\n")
     f.close()
 
-    f = fs.FileIO("/mnt/test02.txt","r")
+    f = fs.FileIO("/sd/test02.txt","r")
     print(f.read())
     f.close()
 
-    fs.unmount("/mnt")
+    fs.unmount("/sd")
 
     sleep(1000)
