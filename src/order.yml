@@ -41,6 +41,7 @@ root:
     - Hello_4ZeroBox
     - ADC_sensor_reading_4ZeroBox
     - 4ZeroBox_modbus_serial_interface
+    - 4ZeroBox_sdcard
     - 4ZeroBox_meets_ZDM_wifi
     - 4ZeroBox_meets_ZDM_ethernet
     - Firmware_over_the_air_update
@@ -154,3 +155,7 @@ examples:
     name: 4ZeroBox_modbus_serial_interface
     folder: dist/examples/4ZeroBox_modbus_serial_interface
     hint: 4ZeroBox modbus serial interface
+  - title: 4ZeroBox sdcard
+    name: 4ZeroBox_sdcard
+    folder: dist/examples/4ZeroBox_sdcard
+    hint: 4ZeroBox sdcard
