@@ -42,6 +42,7 @@ root:
     - ADC_sensor_reading_4ZeroBox
     - 4ZeroBox_modbus_serial_interface
     - 4ZeroBox_sdcard
+    - 4ZeroBox_microbus_click
     - 4ZeroBox_meets_ZDM_wifi
     - 4ZeroBox_meets_ZDM_ethernet
     - Firmware_over_the_air_update
@@ -159,3 +160,7 @@ examples:
     name: 4ZeroBox_sdcard
     folder: dist/examples/4ZeroBox_sdcard
     hint: 4ZeroBox sdcard
+  - title: 4ZeroBox microbus click
+    name: 4ZeroBox_microbus_click
+    folder: dist/examples/4ZeroBox_microbus_click
+    hint: 4ZeroBox microbus click
