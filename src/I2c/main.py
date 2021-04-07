@@ -17,7 +17,7 @@ i2c_scan_buf = i2c.scan(n_scan=100)
 for addr in i2c_scan_buf:
     print("addr", addr, "present")
 
-i2c_dev = i2c.I2c(0x22)
+i2c_dev = i2c.I2c(32) # 0x20
 write_buf = [4, 0]
 read_cmd = [4]
 write_buf = bytearray(write_buf)
