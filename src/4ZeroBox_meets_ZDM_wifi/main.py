@@ -4,6 +4,7 @@
 
 ################################## IMPORT SECTION ###############################
 from bsp import board
+from zsensors import sensor
 from networking import wifi
 from zdm import zdm
 import threading as th
@@ -11,7 +12,6 @@ import watchdog
 import mcu
 import time
 
-import init.IO_init as io                                   # i/o initialization functions
 ############################### INIT LOCKs/VARs/SFW ############################
 # Lock for sync
 core_sample_lock = th.Lock()
@@ -81,7 +81,7 @@ except Exception as e:
     mcu.reset()
 try:
     print("3 - adc config...")
-    io.init_IO(board)
+    d = sensor.get_sensors_dict()
     print("... done")
 except Exception as e:
     print(e)

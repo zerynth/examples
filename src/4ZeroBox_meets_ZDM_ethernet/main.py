@@ -5,6 +5,7 @@
 ################################## IMPORT SECTION ###############################
 from bsp import board
 from networking import eth
+from zsensors import sensor
 from zdm import zdm
 import threading as th
 import watchdog
@@ -77,7 +78,7 @@ except Exception as e:
     mcu.reset()
 try:
     print("3 - adc config...")
-    io.init_IO(board)
+    d = sensor.get_sensors_dict()
     print("... done")
 except Exception as e:
     print(e)

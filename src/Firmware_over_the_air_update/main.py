@@ -4,6 +4,7 @@
 
 from bsp import board
 from networking import wifi
+from zsensors import sensor
 from zdm import zdm
 import threading as th
 import watchdog
@@ -100,12 +101,7 @@ except Exception as e:
 core_sample_lock.acquire()
 try:
     print("adc config...")
-    # Config FourZeroBox ADC channels        
-    board.config_adc(board.ADC_010_420, 1, 2, 7)
-    board.config_adc(board.ADC_RES, 1, 2, 7)
-    # Config FourZeroBox ADC conversion parameters
-    board.set_conversion_010_420(1, 0, 100, 0, 0, 100)   
-    board.set_conversion_resistive(1, -50, ref_table, 5)
+    d = sensor.get_sensors_dict()
     print("adc config done")
 except Exception as e:
     print(e)
