@@ -1,0 +1,15 @@
+##### Project config file
+## CONFIG SECTION: entries are visible in Python and C preprocessors
+config:
+  A_ZERYNTH_PY_AND_C_MACRO: 0
+## PY SECTION: entries are visibile in Python preprocessor only
+py:
+  A_ZERYNTH_PY_MACRO: 0
+## C SECTION: entries are visibile in C preprocessor only
+c:
+  A_ZERYNTH_C_MACRO: 0
+## globals SECTION: entries are hyper globals names in Python (available in all modules)
+globals:
+  ZERYNTH_OS: true
+
+

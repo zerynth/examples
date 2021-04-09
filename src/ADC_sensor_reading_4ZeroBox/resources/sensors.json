@@ -1,0 +1,97 @@
+{
+    "resistive_1": {
+        "set": {
+            "type": "resistive",
+            "exp": null,
+            "input_number": 1,
+            "PGA": 2,
+            "SPS": 7
+        },
+        "conversion": {
+            "type": "lookup_table",
+            "args": {
+                "v_min": -50,
+                "ref_table": [329.5,247.7,188.5,144.1,111.3,86.43,67.77,53.41,42.47,33.90,27.28,22.05,17.96,14.69,12.09,10.00,8.313,6.940,5.827,4.911,4.160,3.536,3.020,2.588,2.228,1.924,1.668,1.451,1.266,1.108,0.9731,0.8572,0.7576],
+                "delta": 5,
+                "offset": 0,
+                "out_of_range": null
+            }
+        }
+    },
+    "resistive_2": {
+        "set": {
+            "type": "resistive",
+            "exp": null,
+            "input_number": 2,
+            "PGA": 2,
+            "SPS": 7
+        },
+        "conversion": {
+            "type": "lookup_table",
+            "args": {
+                "v_min": -50,
+                "ref_table": [329.5,247.7,188.5,144.1,111.3,86.43,67.77,53.41,42.47,33.90,27.28,22.05,17.96,14.69,12.09,10.00,8.313,6.940,5.827,4.911,4.160,3.536,3.020,2.588,2.228,1.924,1.668,1.451,1.266,1.108,0.9731,0.8572,0.7576],
+                "delta": 5,
+                "offset": 0,
+                "out_of_range": null
+            }
+        }
+    },
+    "resistive_3": {
+        "set": {
+            "type": "resistive",
+            "exp": null,
+            "input_number": 3,
+            "PGA": 2,
+            "SPS": 7
+        },
+        "conversion": {
+            "type": "lookup_table",
+            "args": {
+                "v_min": -50,
+                "ref_table": [329.5,247.7,188.5,144.1,111.3,86.43,67.77,53.41,42.47,33.90,27.28,22.05,17.96,14.69,12.09,10.00,8.313,6.940,5.827,4.911,4.160,3.536,3.020,2.588,2.228,1.924,1.668,1.451,1.266,1.108,0.9731,0.8572,0.7576],
+                "delta": 5,
+                "offset": 0,
+                "out_of_range": null
+            }
+        }
+    },
+    "Curr_420": {
+        "set": {
+            "type": "Curr_420",
+            "exp": null,
+            "input_number": 1,
+            "PGA": 2,
+            "SPS": 7
+        },
+        "conversion": {
+            "type": "linear",
+            "args": {
+                "y_min": 0,
+                "y_max": 100,
+                "offest": 0,
+                "under_x": 0, 
+                "over_x": 0
+            }
+        }
+    },
+    "current": {
+        "set": {
+            "type": "current",
+            "exp": null,
+            "input_number": 1,
+            "PGA": 2,
+            "SPS": 7
+        },
+        "conversion": {
+            "type": "power",
+            "args": {
+                "ncoil": 1,
+                "ratio": 2000,
+                "voltage": 220,
+                "offset": 0,
+                "vref": 2.048
+            }
+        }
+    }
+}
