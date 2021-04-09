@@ -66,7 +66,7 @@ try:
     print("1 - Connecting ...")
     eth.configure(dhcp=True)
     eth.start()
-    print("connected!", eth.info)
+    print("connected!", eth.info())
 
     # Connection to ZDM
     print("2 - Connecting to ZDM ...")
