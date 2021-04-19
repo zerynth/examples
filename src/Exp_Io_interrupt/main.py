@@ -7,9 +7,16 @@
 # this project can be run on different Zerynth hardware
 # without changing a line of code.
 from bsp import board
-
 from expansions import io
 import gpio
+
+# Rising edge callback function
+def rise_function():
+    print("Positive edge triggered")
+
+# Falling edge callback function
+def fall_function():
+    print("Negative edge triggered")
 
 # Initialize board
 board.init()
@@ -22,17 +29,14 @@ io_sw_sel = (1, 0,)
 # All pin of the EXP-IO will be initialized correctly
 exp_io = board.next_expansion(io, io_sw_sel)
 
-def riseFunction():
-    print("increasing value")
-
-def fallFunction():
-    print("decreasing value")
-
-gpio.on_rise(exp_io.DIN1, riseFunction)
-gpio.on_fall(exp_io.DIN1, fallFunction)
+# Set the callbacks to the two EXP-IO DIN
+gpio.on_rise(exp_io.DIN1, rise_function)
+gpio.on_fall(exp_io.DIN2, fall_function)
 
 while True:
-    # Switch logic value
-    gpio.toggle(exp_io.DIN1)
-    print("DIN1 =", gpio.get(exp_io.DIN1))
+    # Get the current value of the DIN1
+    print("DIN1 =", exp_io.din_get(exp_io.DIN1))
+    # Get the current value of the DIN2
+    print("DIN2 =", exp_io.din_get(exp_io.DIN2))
+    # Sleep 3 seconds
     sleep(3000)
