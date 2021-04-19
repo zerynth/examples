@@ -4,7 +4,12 @@
 
 from expansions import relay
 from bsp import board
-import gpio
+
+def turn_lamp_on(exp, out):
+    exp.relay_on(out)
+
+def turn_lamp_off(exp, out):
+    exp.relay_off(out)
 
 # Initialize board
 board.init()
@@ -14,8 +19,13 @@ relay_sw_sel = (1,)
 # Add the EXP-RELAY to the board
 # All pin of the EXP-RELAY will be initialized correctly
 exp_relay = board.next_expansion(relay, relay_sw_sel)
-
+rel1 = exp_relay.OUT1
+# Use gpio api to turn the lamp on and off
 while True:
-    exp_relay.relay_on(exp_relay.OUT1)
+    # Switch relay state
+    if exp_relay.is_relay_on(rel1):
+        turn_lamp_off(exp_relay, rel1)
+    else:
+        turn_lamp_on(exp_relay, rel1)
+    # Sleep 3 seconds
     sleep(3000)
-    exp_relay.relay_off(exp_relay.OUT1)

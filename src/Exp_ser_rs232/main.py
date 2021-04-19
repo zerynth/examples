@@ -13,12 +13,15 @@ import threading as th
 board.init()
 # Pass the rotative switch selector position
 # Interrupt pin INTR
-ser_sw_sel = (0,)
+ser_sw_sel1 = (0,)
 # Add the EXP-SER to the board
 # All pin of the EXP-SER will be initialized correctly
-exp_ser = board.next_expansion(ser, ser_sw_sel)
+exp_ser1 = board.next_expansion(ser, ser_sw_sel)
 # Initialize serial1 and serial2
-ser1 = exp_ser.get_serial(ser=SERIAL1, mode=serial.MODE_UART, flow_ctrl=serial.HW_FLOWCTRL_CTS_RTS)
+ser1 = exp_ser1.get_serial(ser=SERIAL1, mode=serial.MODE_UART, flow_ctrl=serial.HW_FLOWCTRL_CTS_RTS)
+
+ser_sw_sel2 = (0,)
+exp_ser2 = board.next_expansion(ser, ser_sw_sel2)
 ser2 = exp_ser.get_serial(ser=SERIAL2, mode=serial.MODE_UART, flow_ctrl=serial.HW_FLOWCTRL_CTS_RTS)
 
 # Lock for sync
