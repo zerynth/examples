@@ -1,7 +1,13 @@
 ################################################################################
 # 4ZeroBox Sensor Reading
 ################################################################################
+
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 from zsensors import sensor
 import mcu
 import threading as th

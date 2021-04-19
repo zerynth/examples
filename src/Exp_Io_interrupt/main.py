@@ -2,8 +2,13 @@
 # EXP-IO: Interrupt on opto-isolated
 ###############################################################################
 
-from expansions import io
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
+from expansions import io
 import gpio
 
 # Initialize board

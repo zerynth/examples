@@ -5,8 +5,13 @@
 # Welcome to EXP-RELAY example.
 # Let's see how to initialize and use outputs relay of the EXP-RELAY
 
-from expansions import relay
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
+from expansions import relay
 import gpio
 
 # Initialize ZM1-DB

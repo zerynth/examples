@@ -7,7 +7,12 @@
 # Before exeuting this code, please associate the device with your
 # ZDM account by selecting "ZDM target" in VSCode Control Panel.
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 # Let's import the zdm module
 from zdm import zdm
 # We also need wifi or ethernet

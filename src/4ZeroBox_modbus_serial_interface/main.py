@@ -2,7 +2,12 @@
 # Modbus Serial Interface
 ################################################################################
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 import serial
 from protocols.modbus import modbus as modbus
 import watchdog
