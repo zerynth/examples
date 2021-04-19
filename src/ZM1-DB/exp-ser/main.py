@@ -6,8 +6,13 @@
 # Let's see how to initialize and use the EXP-RELAY with RS485
 # Zerynth will handle the RTS pin of the RS485 by its own.
 
-from expansions import ser
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
+from expansions import ser
 import serial
 
 # Initialize ZM1-DB

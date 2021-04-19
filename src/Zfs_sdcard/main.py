@@ -2,6 +2,12 @@
 # ZFileSystem SD card
 ################################################################################
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
+from bsp import board
+
 import fs
 
 while True:
@@ -11,7 +17,7 @@ while True:
     f = fs.open("/sd/test.txt", "r")
     print(f.read())
     f.close()
-    
+
     # create a new file and read it back
     f = fs.open("/sd/test02.txt","w")
     f.write("first row: test 01\n")

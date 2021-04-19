@@ -3,7 +3,13 @@
 ###############################################################################
 
 ################################## IMPORT SECTION ###############################
+
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 from networking import eth
 from zsensors import sensor
 from zdm import zdm
@@ -12,7 +18,7 @@ import watchdog
 import mcu
 import time
 
-import init.IO_init as io                                   # i/o initialization functions
+import init.IO_init as io                         # i/o initialization functions
 ############################### INIT LOCKs/VARs/SFW ############################
 # Lock for sync
 core_sample_lock = th.Lock()

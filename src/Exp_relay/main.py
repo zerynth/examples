@@ -2,14 +2,20 @@
 # RELAY: The Relay library example over a AC circuit with a industrial lamp
 #################################################################################
 
-from expansions import relay
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+from expansions import relay
+import gpio
 
 def turn_lamp_on(exp, out):
     exp.relay_on(out)
 
 def turn_lamp_off(exp, out):
     exp.relay_off(out)
+
 
 # Initialize board
 board.init()

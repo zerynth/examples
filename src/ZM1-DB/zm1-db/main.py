@@ -7,7 +7,12 @@
 # in this case, the USB serial port (open the device console to view the output)
 # and blink the green LED
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 import gpio
 
 # Initialize the ZM1-DB
