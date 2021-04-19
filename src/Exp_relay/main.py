@@ -8,7 +8,6 @@
 # without changing a line of code.
 from bsp import board
 from expansions import relay
-import gpio
 
 def turn_lamp_on(exp, out):
     exp.relay_on(out)
@@ -28,6 +27,7 @@ exp_relay = board.next_expansion(relay, relay_sw_sel)
 rel1 = exp_relay.OUT1
 # Use gpio api to turn the lamp on and off
 while True:
+    print("Toggling relay 1")
     # Switch relay state
     if exp_relay.is_relay_on(rel1):
         turn_lamp_off(exp_relay, rel1)
