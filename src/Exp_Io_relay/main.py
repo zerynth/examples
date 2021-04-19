@@ -11,6 +11,7 @@
 # this project can be run on different Zerynth hardware
 # without changing a line of code.
 from bsp import board
+from expansions import io
 
 # Initialize board
 board.init()
@@ -23,6 +24,7 @@ exp_io = board.next_expansion(io, io_sw_sel)
 out1 = exp_io.OUT1
 # Use gpio api to control EXP-IO Outputs
 while True:
+    print("Toggling output 1")
     # Switch output 1
     if exp_io.is_out_on(out1):
         exp_io.out_off(out1)
