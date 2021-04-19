@@ -1,11 +1,11 @@
 {
-    "resistive": {
+    "temperature": {
         "set": {
             "type": "resistive",
-            "exp": null,
+            "exp": "IO1",
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 0
         },
         "conversion": {
             "type": "lookup_table",
