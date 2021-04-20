@@ -14,13 +14,13 @@ from networking import socket
 board.init()
 board.summary()
 
-ifc=-1
+# ifc=-1
 
 while True:
 
     try:
         print("configuring...")
-        ifc = eth.configure(dhcp=True)
+        eth.configure(dhcp=True)
         print("connecting...")
         eth.start()
 
@@ -31,7 +31,7 @@ while True:
         print("resolved",ip)
         if (ip != None):
             print("creating socket...")
-            s = socket.socket(ifc=ifc)
+            s = socket.socket()
             print("connecting socket...")
             s.connect((ip,80))
             s.send("GET / HTTP/1.1\n")
