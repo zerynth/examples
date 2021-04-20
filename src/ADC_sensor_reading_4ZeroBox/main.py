@@ -34,11 +34,11 @@ def read_event_handler():
             ready = False
             print("======== reading")
             # Read from 4-20mA channel1, resistive channel1/channel2/channel3, power channel1
-            analog_val = board.read_420(1)
-            temp_1 = board.read_resistive(1)
-            temp_2 = board.read_resistive(2)
-            temp_3 = board.read_resistive(3)
-            power = board.read_power(1)
+            analog_val = sens_dict["current"].read()
+            temp_1 = sens_dict["temperature_1"].read()
+            temp_2 = sens_dict["temperature_2"].read()
+            temp_3 = sens_dict["temperature_3"].read()
+            power = sens_dict["power"].read()
             print(" - analog    :", analog_val)
             print(" - temp 1    :", temp_1)
             print(" - temp 2    :", temp_2)
@@ -53,7 +53,7 @@ def read_event_handler():
 try:
     print("adc config...")
     #Create a dictionary with all FourZeroBox sensors
-    d = sensor.get_sensors_dict()
+    sens_dict = sensor.get_sensors_dict()
     print("adc config done")
 except Exception as e:
     print(e)
