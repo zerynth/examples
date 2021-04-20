@@ -17,7 +17,7 @@ import adc
 # loop forever
 while True:
     # acquiring the analog signal from a pin
-    value = adc.read(A0) 
+    value = adc.read(D20)
     # convert to range [0..80]
     conv = value*80//4095
     print("|","#"*conv," "*(80-conv),"|",value)
