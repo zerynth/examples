@@ -12,7 +12,7 @@ from bsp import board
 import i2c
 
 '''
-This i2c test works with db zm1 writing on 
+This i2c test works with zm1 db writing on
 output register of pcal65424
 '''
 
