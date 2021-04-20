@@ -16,12 +16,24 @@ sleep(5000)
 while True:
     fs.mount("/sd", fs.SD, 10000000)
 
-    # read an existing file
-    f = fs.open("/sd/test.txt","r")
-    print(f.read())
-    f.close()
+    try:
+        # read an existing file
+        f = fs.open("/sd/test.txt","r")
+        print(f.read())
+        f.close()
+    except:
+        print("Missing test.txt on SD. Skipping...")
 
-    # create a file and read it back
+    try:
+        # create a file and read it back
+        f = fs.open("/sd/test2.txt", "w")
+        f.write("Hello Zerynth!\n")
+        f.close()
+    except:
+        print("Cannot create test2.txt file on the SD card")
+        fs.unmount("/sd")
+        continue
+
     f = fs.open("/sd/test2.txt","r")
     print(f.tell())
     print(f.size())
