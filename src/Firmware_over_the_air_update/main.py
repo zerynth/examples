@@ -17,8 +17,8 @@ import mcu
 import gpio
 
 # Set the ssid and password of your wifi network
-ssid = "Zerynth"
-passwd = "Zerynth"
+ssid = "ZerynthTest"
+passwd = "ZerynthTT"
 
 # Lock for sync
 core_sample_lock = th.Lock()
@@ -29,9 +29,6 @@ watchdog.setup(60000)
 
 # firmware version to change and check after the FOTA procedure
 fw_version = "v01"
-# Reference table for no linear NTC sensor
-ref_table = [329.5,247.7,188.5,144.1,111.3,86.43,67.77,53.41,42.47,33.90,27.28,22.05,17.96,14.69,12.09,10.00,8.313,
-              6.940,5.827,4.911,4.160,3.536,3.020,2.588,2.228,1.924,1.668,1.451,1.266,1.108,0.9731,0.8572,0.7576]
 
 def pub_event_handler():
     global ready
@@ -43,8 +40,8 @@ def pub_event_handler():
             ready = False
             print("======== reading")
             # Read from 4-20mA channel1, resistive channel1, power channel1
-            analog_val = board.read_420(1)
-            temperature = board.read_resistive(1)
+            analog_val = d["Curr_420"].read()
+            temperature = d["temperature"].read()
             print(" - temp:", temperature)
             print(" - analog:", analog_val)
             # Organize data in json dict
@@ -95,10 +92,10 @@ try:
     print("Connected...", wifi.info())
     print("Connecting to ZDM ...")
     #TODO: for tech team...remove host parameter before going in production   
-    device = zdm.Agent(jobs={'blink': jblink, 'read_async': jread}, host="zmqtt.zdm.stage.zerynth.com")
+    device = zdm.Agent(jobs={'blink': jblink, 'read_async': jread})
     # connect the device to the ZDM
     device.start()
-    print(print("Connected...", zdm.info()))
+    print("done...")
 except Exception as e:
     print (e)
     mcu.reset()

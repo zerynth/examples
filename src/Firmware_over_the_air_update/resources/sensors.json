@@ -1,11 +1,11 @@
 {
-    "resistive": {
+    "temperature": {
         "set": {
             "type": "resistive",
             "exp": null,
             "input_number": 3,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 1000
         },
         "conversion": {
             "type": "lookup_table",
@@ -20,11 +20,11 @@
     },
     "Curr_420": {
         "set": {
-            "type": "Curr_420",
+            "type": "current",
             "exp": null,
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 1000
         },
         "conversion": {
             "type": "linear",
