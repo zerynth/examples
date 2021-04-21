@@ -2,6 +2,12 @@
 # ZDM Simple
 ################################################################################
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
+from bsp import board
+
 # The Zerynth Device Manager is the entrypoint for the zCloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your

@@ -3,10 +3,16 @@
 ########################################################
 
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
+from bsp import board
+
 import i2c
 
 '''
-This i2c test works with db zm1 writing on 
+This i2c test works with zm1 db writing on
 output register of pcal65424
 '''
 
