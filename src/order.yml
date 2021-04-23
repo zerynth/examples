@@ -76,30 +76,6 @@ examples:
     name: Time
     folder: dist/examples/Time
     hint: Time Handling
-  - title: Interrupts
-    name: Interrupts
-    folder: dist/examples/Interrupts
-    hint: Interrupts on pins
-  - title: Exceptions-Debugger
-    name: Exceptions-Debugger
-    folder: dist/examples/Exceptions-Debugger
-    hint: Exceptions-Debugger
-  - title: Math
-    name: Math
-    folder: dist/examples/Math
-    hint: Math
-  - title: Resources
-    name: Resources
-    folder: dist/examples/Resources
-    hint: Resources
-  - title: Filesystem
-    name: Filesystem
-    folder: dist/examples/Filesystem
-    hint: Filesystem
-  - title: MCU Reset
-    name: MCU_Reset
-    folder: dist/examples/MCU_Reset
-    hint: MCU Reset
   - title: C Language Interface
     name: C_Language_Interface
     folder: dist/examples/C_Language_Interface
@@ -148,14 +124,6 @@ examples:
     name: Ethernet_http
     folder: dist/examples/Ethernet_http
     hint: Ethernet http
-  - title: FileSystem internal
-    name: FileSystem_internal
-    folder: dist/examples/FileSystem_internal
-    hint: FileSystem internal
-  - title: FileSystem sdcard
-    name: FileSystem_sdcard
-    folder: dist/examples/FileSystem_sdcard
-    hint: FileSystem sdcard
   - title: Spi
     name: Spi
     folder: dist/examples/Spi
@@ -208,3 +176,11 @@ examples:
     name: PROTO_Connecting_BME280_to_ZDM
     folder: dist/examples/Exp_proto
     hint: PROTO Connecting BME280 to ZDM
+  - title: Filesystem internal
+    name: FileSystem_internal
+    folder: dist/examples/Zfs_internal
+    hint: Filesystem internal
+  - title: Fielsystem sdcard
+    name: FileSystem_internal
+    folder: dist/examples/Zfs_sdcard
+    hint: Fielsystem sdcard
