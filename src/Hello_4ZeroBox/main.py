@@ -13,6 +13,6 @@ watchdog.setup(4000)
 # loop forever
 while True:
     # print something
-    print("Hello Zerynth 4ZeroBox!")  
+    print("Hello Zerynth 4ZeroBox!")
     # sleep 1 second
     sleep(1000)

@@ -2,32 +2,37 @@
 # Ethernet HTTP
 ################################################################################
 
+#Let's setup an Ethernet connection and use some sockets with HTTP.
+
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
 
 from networking import eth
 from networking import socket
 
 board.init()
-board.summary()
-
-ifc=-1
 
 while True:
-
     try:
+        # Configure and start ethernet drivers
         print("configuring...")
-        ifc = eth.configure(dhcp=True)
+        eth.configure(dhcp=True)
         print("connecting...")
         eth.start()
 
         print("connected...")
         print("info...")
         print(eth.info())
+        # Get ip of Zerynth
         ip=eth.resolve("now.zerynth.com")
         print("resolved",ip)
         if (ip != None):
+            # Open a socket and sent a GET
             print("creating socket...")
-            s = socket.socket(ifc=ifc)
+            s = socket.socket()
             print("connecting socket...")
             s.connect((ip,80))
             s.send("GET / HTTP/1.1\n")
@@ -36,6 +41,7 @@ while True:
             print(b)
             print("close socket...")
             s.close()
+        # Disconnect
         print("disconnecting...")
         eth.disconnect()
         print("disconnected...")

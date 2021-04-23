@@ -1,11 +1,11 @@
 {
-    "resistive_1": {
+    "temperature_1": {
         "set": {
             "type": "resistive",
             "exp": null,
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 3000
         },
         "conversion": {
             "type": "lookup_table",
@@ -18,13 +18,13 @@
             }
         }
     },
-    "resistive_2": {
+    "temperature_2": {
         "set": {
             "type": "resistive",
             "exp": null,
             "input_number": 2,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 3000
         },
         "conversion": {
             "type": "lookup_table",
@@ -37,13 +37,13 @@
             }
         }
     },
-    "resistive_3": {
+    "temperature_3": {
         "set": {
             "type": "resistive",
             "exp": null,
             "input_number": 3,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 3000
         },
         "conversion": {
             "type": "lookup_table",
@@ -56,13 +56,13 @@
             }
         }
     },
-    "Curr_420": {
+    "current": {
         "set": {
-            "type": "Curr_420",
+            "type": "current",
             "exp": null,
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 3000
         },
         "conversion": {
             "type": "linear",
@@ -75,18 +75,19 @@
             }
         }
     },
-    "current": {
+    "power": {
         "set": {
-            "type": "current",
+            "type": "current_ac",
             "exp": null,
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 400
         },
         "conversion": {
             "type": "power",
             "args": {
-                "ncoil": 1,
+                "n_coil": 1,
+                "n_samples": 400,
                 "ratio": 2000,
                 "voltage": 220,
                 "offset": 0,

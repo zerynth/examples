@@ -7,7 +7,12 @@
 # Before exeuting this code, please associate the device with your
 # ZDM account by selecting "ZDM target" in VSCode Control Panel.
 
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 # Let's import the zdm module
 from zdm import zdm
 # We also need wifi or ethernet
@@ -46,10 +51,8 @@ while True:
         # the Agent class implements all the logic to talk with the ZDM
         # it also accepts an array of label with the type of conditions handled by the firmware.
         # It also needs a function to be called when the list of already open conditions are received.
-        #TODO: for tech team...remove host parameter before going in production
         agent = zdm.Agent(conditions=["battery"],
-                on_conditions=my_open_conditions_callback,
-                host="zmqtt.zdm.stage.zerynth.com")
+                on_conditions=my_open_conditions_callback)
         # just start it
         agent.start()
 

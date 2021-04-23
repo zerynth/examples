@@ -3,7 +3,13 @@
 ###############################################################################
 
 ################################## IMPORT SECTION ###############################
+
+# First, import the board module from the bsp (board support package).
+# The bsp loads board specific names, variables and settings so that
+# this project can be run on different Zerynth hardware
+# without changing a line of code.
 from bsp import board
+
 from zsensors import sensor
 from networking import wifi
 from zdm import zdm
@@ -21,8 +27,8 @@ ready = True
 watchdog.setup(60000)
 
 ################################### NETWORKING ################################
-SSID = "Zerynth"
-PASSWORD = "TOIZerynth2021"
+SSID = "ZerynthTest"
+PASSWORD = "ZerynthTT"
 
 ############################### THREAD DEFINITIONS ############################
 def pub_event_handler():
@@ -37,8 +43,8 @@ def pub_event_handler():
 
             print("############################# MAIN LOOP start############################# ")
             print("======== READING SIGNALS")
-            temp = board.read_resistive(1)
-            power = board.read_power(1)
+            temp = d["temperature"].read()
+            power = d["power"].read()
             print(" - temp[C]:      ", temp)
             print(" - power[W]:     ", power)
 
@@ -52,12 +58,6 @@ def pub_event_handler():
             # Publish data to ZDM cloud service
             device.publish(to_send, "data")
             sleep(100)
-
-            # yellow blink if low signal, green blink otherwise
-            #if rssi < -70:
-            #    fzbox.reverse_pulse('Y',100)
-            #else:
-            #    fzbox.reverse_pulse('G',100)
 
         except Exception as e:
             print('Publish exception: ', e)
@@ -73,7 +73,7 @@ try:
 
     # Connection to ZDM
     print("2 - Connecting to ZDM ...")
-    device = zdm.Agent(host="zmqtt.zdm.stage.zerynth.com")               #TODO: for tech team...remove host parameter before going in production
+    device = zdm.Agent()
     device.start()
     print("... done")
 except Exception as e:

@@ -1,11 +1,11 @@
 {
-    "resistive_1": {
+    "temperature": {
         "set": {
             "type": "resistive",
             "exp": null,
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 3000
         },
         "conversion": {
             "type": "lookup_table",
@@ -18,18 +18,19 @@
             }
         }
     },
-    "current": {
+    "power": {
         "set": {
-            "type": "current",
+            "type": "current_ac",
             "exp": null,
             "input_number": 1,
             "PGA": 2,
-            "SPS": 7
+            "SPS": 3000
         },
         "conversion": {
             "type": "power",
             "args": {
-                "ncoil": 1,
+                "n_coil": 1,
+                "n_samples": 400,
                 "ratio": 2000,
                 "voltage": 220,
                 "offset": 0,
