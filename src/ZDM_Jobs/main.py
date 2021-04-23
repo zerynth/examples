@@ -59,8 +59,7 @@ while True:
 
         # the Agent class implements all the logic to talk with the ZDM
         # it also accepts a dictionary of functions to be called as jobs
-        #TODO: for tech team...remove host parameter before going in production
-        agent = zdm.Agent(jobs={"color":color},host="zmqtt.zdm.stage.zerynth.com")
+        agent = zdm.Agent(jobs={"color":color})
         # just start it
         agent.start()
 

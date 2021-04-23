@@ -67,7 +67,7 @@ try:
 
     # Connection to ZDM
     print("2 - Connecting to ZDM ...")
-    device = zdm.Agent(host="zmqtt.zdm.stage.zerynth.com")               #TODO: for tech team...remove host parameter before going in production
+    device = zdm.Agent()
     device.start()
     print("... done")
 except Exception as e:
