@@ -27,8 +27,8 @@ ready = True
 watchdog.setup(60000)
 
 ################################### NETWORKING ################################
-SSID = "Zerynth"
-PASSWORD = "TOIZerynth2021"
+SSID = "ZerynthTest"
+PASSWORD = "ZerynthTT"
 
 ############################### THREAD DEFINITIONS ############################
 def pub_event_handler():
