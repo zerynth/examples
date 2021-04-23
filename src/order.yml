@@ -34,6 +34,18 @@ root:
           - ZDM_Simple
           - ZDM_Jobs
           - ZDM_Conditions
+  - title: Expansions
+    tag: Expansions
+    hint: Expansions
+    examples: 
+    - IO_relay_library
+    - IO_adc_channel
+    - IO_interrupt
+    - RELAY_ac_circuit_with_an_industrial_lamp
+    - SER_can
+    - SER_rs232
+    - SER_ModbusSerial_over_rs485
+    - PROTO_Connecting_BME280_to_ZDM
   - title: 4ZeroBox
     tag: 4ZeroBox
     hint: 4ZeroBox
@@ -164,3 +176,35 @@ examples:
     name: 4ZeroBox_microbus_click
     folder: dist/examples/4ZeroBox_microbus_click
     hint: 4ZeroBox microbus click
+  - title: IO relay library
+    name: IO_relay_library
+    folder: dist/examples/Exp_Io_relay
+    hint: IO relay library
+  - title: IO adc channel
+    name: IO_adc_channel
+    folder: dist/examples/Exp_Io_ADC
+    hint: IO adc channel
+  - title: IO interrupt on opto-isolated
+    name: IO_interrupt
+    folder: dist/examples/Exp_Io_interrupt
+    hint: IO interrupt on opto-isolated
+  - title: RELAY ac circuit with an industrial lamp 
+    name: RELAY_ac_circuit_with_an_industrial_lamp 
+    folder: dist/examples/Exp_relay
+    hint: RELAY ac circuit with an industrial lamp 
+  - title: SER can
+    name: SER_can
+    folder: dist/examples/Exp_ser_can
+    hint: SER can
+  - title: SER rs232 
+    name: SER_rs232
+    folder: dist/examples/Exp_ser_rs232
+    hint: SER rs232
+  - title: SER ModbusSerial over rs485
+    name: SER_ModbusSerial_over_rs485
+    folder: dist/examples/Exp_ser_modbus_serial
+    hint: SER ModbusSerial over rs485
+  - title: PROTO Connecting BME280 to ZDM
+    name: PROTO_Connecting_BME280_to_ZDM
+    folder: dist/examples/Exp_proto
+    hint: PROTO Connecting BME280 to ZDM
