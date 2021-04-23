@@ -26,6 +26,9 @@ passwd = "ZerynthTT"
 # Color just switches the onboard RGB led to the value set in the job request
 def color(agent, args):
     print("Job request received!",args)
+    if not "color" in args:
+        return {"msg": "Invalid argument for color job"}
+
     c = args["color"]
     if c=="red":
         gpio.set(LED_GREEN,1)
@@ -43,7 +46,9 @@ def color(agent, args):
         gpio.set(LED_GREEN,1)
         gpio.set(LED_BLUE,1)
         gpio.set(LED_RED,1)
+        c="off"
 
+    return {"msg": "LED set to %s" % c}
 
 while True:
 
