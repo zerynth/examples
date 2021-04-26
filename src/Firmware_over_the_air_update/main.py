@@ -17,8 +17,8 @@ import mcu
 import gpio
 
 # Set the ssid and password of your wifi network
-ssid = "ZerynthTest"
-passwd = "ZerynthTT"
+ssid = "Example-SSID"
+passwd = "Example-Password"
 
 # Lock for sync
 core_sample_lock = th.Lock()

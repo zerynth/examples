@@ -16,8 +16,8 @@ import gpio
 
 
 # Set the ssid and password of your wifi network
-ssid = "ZerynthTest"
-passwd = "ZerynthTT"
+ssid = "Example-SSID"
+passwd = "Example-Password"
 
 
 # this is a function callable by the ZDM with a job request.

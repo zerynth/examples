@@ -19,8 +19,8 @@ from zdm import zdm
 from networking import wifi
 
 # Set the ssid and password of your wifi network
-ssid = "ZerynthTest"
-passwd = "ZerynthTT"
+ssid = "Example-SSID"
+passwd = "Example-Password"
 
 while True:
 
