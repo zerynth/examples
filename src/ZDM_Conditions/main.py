@@ -21,8 +21,8 @@ import gpio
 
 
 # Set the ssid and password of your wifi network
-ssid = "ZerynthTest"
-passwd = "ZerynthTT"
+ssid = "Example-SSID"
+passwd = "Example-Password"
 
 
 # this function is executed when the agent receives the list of the open conditions from a previous run.
