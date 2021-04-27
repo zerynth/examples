@@ -1,6 +1,0 @@
-Embedding files directly
-in the board flash
-and opening them
-as resources
-           
-How cool is that?
