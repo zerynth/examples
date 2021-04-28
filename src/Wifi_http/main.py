@@ -12,8 +12,8 @@ from networking import wifi
 from networking import socket
 
 # Set the ssid and password of your wifi network
-ssid = "ZerynthTest"
-passwd = "ZerynthTest"
+ssid = "Example-SSID"
+passwd = "Example-Password"
 
 while True:
     try:

@@ -58,6 +58,7 @@ root:
     - 4ZeroBox_meets_ZDM_wifi
     - 4ZeroBox_meets_ZDM_ethernet
     - Firmware_over_the_air_update
+    - Industrial_Kit
           
 examples:
   - title: Hello Zerynth
@@ -84,7 +85,7 @@ examples:
     name: Watchdogs
     folder: Watchdogs
     hint: Watchdogs
-  - title: Wifi http
+  - title: Wifi HTTP
     name: Wifi_http
     folder: Wifi_http
     hint: Wifi http
@@ -104,15 +105,15 @@ examples:
     name: Hello_4ZeroBox
     folder: Hello_4ZeroBox
     hint: Hello 4ZeroBox
-  - title: Sensor reading
+  - title: Sensor Reading
     name: ADC_sensor_reading_4ZeroBox
     folder: ADC_sensor_reading_4ZeroBox
     hint: Sensor reading
-  - title: 4ZeroBox meets ZDM wifi
+  - title: ZDM over Wifi
     name: 4ZeroBox_meets_ZDM_wifi
     folder: 4ZeroBox_meets_ZDM_wifi
     hint: 4ZeroBox meets ZDM wifi
-  - title: 4ZeroBox meets ZDM ethernet
+  - title: ZDM over Ethernet
     name: 4ZeroBox_meets_ZDM_ethernet
     folder: 4ZeroBox_meets_ZDM_ethernet
     hint: 4ZeroBox meets ZDM ethernet
@@ -120,7 +121,7 @@ examples:
     name: Firmware_over_the_air_update
     folder: Firmware_over_the_air_update
     hint: Firmware over the air update
-  - title: Ethernet http
+  - title: Ethernet HTTP
     name: Ethernet_http
     folder: Ethernet_http
     hint: Ethernet http
@@ -132,47 +133,47 @@ examples:
     name: I2c
     folder: I2c
     hint: I2c
-  - title: 4ZeroBox modbus serial interface
+  - title: Modbus over Serial
     name: 4ZeroBox_modbus_serial_interface
     folder: 4ZeroBox_modbus_serial_interface
     hint: 4ZeroBox modbus serial interface
-  - title: 4ZeroBox sdcard
+  - title: Filesystem SD Card
     name: 4ZeroBox_sdcard
     folder: 4ZeroBox_sdcard
     hint: 4ZeroBox sdcard
-  - title: 4ZeroBox microbus click
+  - title: Mikrobus Click
     name: 4ZeroBox_microbus_click
     folder: 4ZeroBox_microbus_click
     hint: 4ZeroBox microbus click
-  - title: IO relay library
+  - title: IO Relay
     name: IO_relay_library
     folder: Exp_Io_relay
     hint: IO relay library
-  - title: IO adc channel
+  - title: IO Analog
     name: IO_adc_channel
     folder: Exp_Io_ADC
     hint: IO adc channel
-  - title: IO interrupt on opto-isolated
+  - title: IO Opto Isolated
     name: IO_interrupt
     folder: Exp_Io_interrupt
     hint: IO interrupt on opto-isolated
-  - title: RELAY ac circuit with an industrial lamp 
+  - title: RELAY  AC circuit with an industrial lamp 
     name: RELAY_ac_circuit_with_an_industrial_lamp 
     folder: Exp_relay
     hint: RELAY ac circuit with an industrial lamp 
-  - title: SER can
+  - title: SER Can Bus
     name: SER_can
     folder: Exp_ser_can
     hint: SER can
-  - title: SER rs232 
+  - title: SER RS232 
     name: SER_rs232
     folder: Exp_ser_rs232
     hint: SER rs232
-  - title: SER ModbusSerial over rs485
+  - title: SER Modbus over RS485
     name: SER_ModbusSerial_over_rs485
     folder: Exp_ser_modbus_serial
     hint: SER ModbusSerial over rs485
-  - title: PROTO Connecting BME280 to ZDM
+  - title: PROTO Connecting BME280
     name: PROTO_Connecting_BME280_to_ZDM
     folder: Exp_proto
     hint: PROTO Connecting BME280 to ZDM
@@ -180,7 +181,12 @@ examples:
     name: FileSystem_internal
     folder: Zfs_internal
     hint: Filesystem internal
-  - title: Fielsystem sdcard
-    name: FileSystem_internal
+  - title: Filesystem on SD Card
+    name: FileSystem_sdcard
     folder: Zfs_sdcard
-    hint: Fielsystem sdcard
+    hint: Filesystem sdcard
+  - title: Industrial IoT Kit
+    name: Industrial_Kit
+    folder: Industrial_Kit
+    hint: Industrial IoT Kit
+
