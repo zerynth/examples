@@ -1,0 +1,41 @@
+{
+    "temperature": {
+        "set": {
+            "type": "resistive",
+            "exp": null,
+            "input_number": 1,
+            "PGA": 2,
+            "SPS": 3000
+        },
+        "conversion": {
+            "type": "lookup_table",
+            "args": {
+                "v_min": -50,
+                "ref_table": [329.5,247.7,188.5,144.1,111.3,86.43,67.77,53.41,42.47,33.90,27.28,22.05,17.96,14.69,12.09,10.00,8.313,6.940,5.827,4.911,4.160,3.536,3.020,2.588,2.228,1.924,1.668,1.451,1.266,1.108,0.9731,0.8572,0.7576],
+                "delta": 5,
+                "offset": 0,
+                "out_of_range": null
+            }
+        }
+    },
+    "power": {
+        "set": {
+            "type": "current_ac",
+            "exp": null,
+            "input_number": 1,
+            "PGA": 2,
+            "SPS": 3300
+        },
+        "conversion": {
+            "type": "power",
+            "args": {
+                "n_coil": 1,
+                "n_samples": 500,
+                "ratio": 2000,
+                "voltage": 220,
+                "offset": 0,
+                "vref": 2.048
+            }
+        }
+    }
+}
