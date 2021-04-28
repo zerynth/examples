@@ -1,10 +1,3 @@
-#################################################################################
-# Title: IO_init.py
-# Project: test_V9
-# Description: file for hardware configuration
-# Created at: 2021-04-22
-# Author: Ugo Scarpellini
-#################################################################################
 
 from zsensors import sensor
 
@@ -20,11 +13,9 @@ def init_sensors():
 
 def read_analog():
     for key, sens in sens_dict.items():
-        sens.read()   
+        sens.read()
 
-# def read_digital(board):
-#     reed_switch = board.get_opto(ISO1)
-    
+
 def print_values():
     # Print values
     for key, sens in sens_dict.items():

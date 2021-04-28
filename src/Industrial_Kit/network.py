@@ -1,4 +1,4 @@
-import utils as ut                                  # utility functions
+import utils as ut
 from networking import wifi
 import mcu
 
