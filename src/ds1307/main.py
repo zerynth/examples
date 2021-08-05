@@ -15,6 +15,7 @@
 from bsp import board
 from components.ds1307 import ds1307
 from components.iim42652 import iim42652
+import time
 
 def config_iim42652(dev):
     # Software reset of the iim42652
@@ -39,12 +40,20 @@ def get_last_data(dev):
 
 def get_and_print_time(dev):
     print("\n<--------------------------- RTC -------------------------->")
-    print(rtc.get_time())
+    lt = rtc.localtime()
+    print(lt.to_tuple()[0:6])
     print("<---------------------------------------------------------->\n")
 
 # Initialize RTC and set time
 rtc = ds1307.DS1307(0x68, I2C0, 400000)
-rtc.set_time(14, 30, 0, 10, 7, 2021, 6)
+t = time.TimeInfo()
+t.tm_sec = 0
+t.tm_min = 30
+t.tm_hour = 14
+t.tm_mday = 10
+t.tm_mon = 7
+t.tm_year = 2021
+rtc.settime(t)
 # Initialize accelerometer
 iim = iim42652.IIM42652(0x69, I2C0, 1000000)
 config_iim42652(iim)
