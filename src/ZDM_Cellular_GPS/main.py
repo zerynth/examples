@@ -18,6 +18,9 @@ from zdm import zdm
 # We also need cellular or ethernet
 from networking import cellular
 
+# Globals
+position = (0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0)
+
 # Initialize the board
 board.init()
 
@@ -27,23 +30,20 @@ cellular.configure()
 print("initializing cellular gnss submodule...")
 gnss = cellular.gnss()
 
-# Globals
-position = (0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0)
+# The very first GNSS fix can take some time since the
+# hardware module has to lock all the required satellites.
+# Here is the initial fix with long timeout.
+print("Doing the initial GPS fix (up to 120secs)...")
+try:
+    position = gnss.fix(timeout=120)
+except GNSSTimeoutError:
+    print("Initial gps fix timed out")
+except Exception as e:
+    print("GNSS fix error: ", e)
 
 while True:
 
     try:
-        # The very first GNSS fix can take some time since the
-        # hardware module has to lock all the required satellites.
-        # Here is the initial fix with long timeout.
-        print("Doing the initial GPS fix (up to 120secs)...")
-        try:
-            position = gnss.fix(timeout=120)
-        except GNSSTimeoutError:
-            print("Initial gps fix timed out")
-        except Exception as e:
-            print("GNSS fix error: ", e)
-
         # Let's connect to the cellular
         print("connecting to cellular...")
         cellular.start()
