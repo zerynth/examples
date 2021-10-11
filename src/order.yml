@@ -32,6 +32,8 @@ root:
         hint: zdm
         examples:
           - ZDM_Simple
+          - ZDM_Simple_Cellular
+          - ZDM_Cellular_GPS
           - ZDM_Jobs
           - ZDM_Conditions
   - title: Expansions
@@ -93,6 +95,14 @@ examples:
     name: ZDM_Simple
     folder: ZDM_Simple
     hint: ZDM Simple
+  - title: ZDM Simple Cellular
+    name: ZDM_Simple_Cellular
+    folder: ZDM_Simple_Cellular
+    hint: ZDM Simple Cellular
+  - title: ZDM Cellular with GPS
+    name: ZDM_Cellular_GPS
+    folder: ZDM_Cellular_GPS
+    hint: ZDM Cellular GPS
   - title: ZDM Jobs
     name: ZDM_Jobs
     folder: ZDM_Jobs
