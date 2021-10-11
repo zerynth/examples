@@ -8,9 +8,6 @@
 # without changing a line of code.
 from bsp import board
 
-# Import the serial interface to talk with the cellular module.
-import serial
-
 # The Zerynth Device Manager is the entrypoint for the zCloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your
@@ -25,19 +22,17 @@ from networking import cellular
 # Initialize the board
 board.init()
 
-# Open and configure the cellular serial port
-_ = serial.serial(SERIAL1, baud=115200)
-modem = serial.serial(SERIAL2, baud=115200, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
+print("configuring cellular...")
+cellular.configure()
 
 while True:
 
     try:
         # Let's connect to the cellular
-        print("configuring cellular...")
-        cellular.configure(modem)
         print("connecting to cellular...")
         cellular.start()
         print("connected!",cellular.info())
+        print("www.zerynth.com: ", cellular.resolve("www.zerynth.com"))
 
         # the Agent class implements all the logic to talk with the ZDM
         agent = zdm.Agent()
@@ -45,9 +40,27 @@ while True:
         agent.start()
 
         while True:
+            # Get the cellular current cell informations
+            ci = cellular.cellinfo()
+            print("cellinfo: ", ci)
+
+            # Prepare the massage to be sent to ZDM
+            msg = {}
+            msg['state']  = ci[0]  # Connection state
+            msg['act']    = ci[1]  # Access technology
+            msg['opcode'] = ci[2]  # Operator code
+            msg['band']   = ci[3]  # Selected band
+            msg['chan']   = ci[4]  # Channel ID
+            msg['lac']    = ci[5]  # Local Area Code
+            msg['cellid'] = ci[6]  # Cell ID
+            msg['bsic']   = ci[7]  # Base station ID code
+            msg['mcc']    = ci[8]  # MCC
+            msg['mnc']    = ci[9]  # MNC
+            msg['oper']   = ci[10] # Operator name
+
             # use the agent to publish values to the ZDM
             # Just open the device page from VSCode and check that data is incoming
-            agent.publish({"value":random(0,100)}, "test")
+            agent.publish(msg, "cellinfo")
             sleep(5000)
             # The agent automatically handles connections and reconnections
             print("ZDM is online:    ",agent.online())
@@ -59,14 +72,11 @@ while True:
     except CellularBadAPN:
         print("Bad APN")
         cellular.stop()
-        cellular.deinit()
     except CellularModemInitError:
         print("Modem initialization failed")
-        cellular.deinit()
     except CellularException:
         print("Generic Cellular Exception")
         cellular.stop()
-        cellular.deinit()
     except Exception as e:
         print("Exception: ", e)
         raise e

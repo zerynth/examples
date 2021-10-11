@@ -18,36 +18,33 @@ from zdm import zdm
 # We also need cellular or ethernet
 from networking import cellular
 
-# Import serial module to talk with cellular component
-import serial
-
 # Initialize the board
 board.init()
 
-# Open and configure the cellular serial port
-_ = serial.serial(SERIAL1, baud=115200)
-modem = serial.serial(SERIAL2, baud=115200, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
+print("configuring cellular...")
+cellular.configure()
+
+print("initializing cellular gnss submodule...")
+gnss = cellular.gnss()
 
 # Globals
-location = (0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0)
+position = (0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0)
 
 while True:
 
     try:
-        # Let's connect to the cellular
-        print("configuring cellular...")
-        cellular.configure(modem)
-        print("initializing cellular...")
-        cellular.init()
-
-        print("initializing cellular gps submodule...")
-        cellular.gps_start()
+        # The very first GNSS fix can take some time since the
+        # hardware module has to lock all the required satellites.
+        # Here is the initial fix with long timeout.
+        print("Doing the initial GPS fix (up to 120secs)...")
         try:
-            # wait the initial fix, which may take some time
-            location = cellular.location(timeout=60)
+            position = gnss.fix(timeout=120)
+        except GNSSTimeoutError:
+            print("Initial gps fix timed out")
         except Exception as e:
-            print("Initial gps fix timed out: ", e)
+            print("GNSS fix error: ", e)
 
+        # Let's connect to the cellular
         print("connecting to cellular...")
         cellular.start()
         print("connected!",cellular.info())
@@ -57,26 +54,38 @@ while True:
         # just start it
         agent.start()
 
-        # Try to get GPS position with an adaptive fix timeout
-        c = 0
+        # Parameters for adaptive GPS fix timeout
+        c = 0        # counter
         k = 5        # increment in seconds for adaptive timeout
         max_incr = 4 # max increment steps for timeout
         while True:
-            tout = 10+min(max_incr,c)*k
+            # Try to get GPS position with an adaptive fix timeout
+            tout = 10+min(max_incr, c)*k  # linear increment with ceiling
             try:
-                location = cellular.location(timeout=tout)
-                lat = location[0]
-                lon = location[1]
+                position = gnss.fix(timeout=tout)
+                print("fixinfo: ", position)
                 c = 0
-            except Exception as e:
-                print("gps fix timed out: ", e, tout)
+            except GNSSTimeoutError:
+                print("gps fix timed out: ", tout)
                 c += 1
+            except Exception as e:
+                print("GNSS fix error: ", e)
+
+            fixinfo = {}
+            fixinfo['lat']   = position[0] # Latitude expressed as (-)dd.ddddd degrees
+            fixinfo['lon']   = position[1] # Longitude expressed as (-)ddd.ddddd degrees
+            fixinfo['hprec'] = position[2] # Horizontal dilution of precision
+            fixinfo['alt']   = position[3] # Altitude above/below mean sea level, expressed in meters.
+            fixinfo['mode']  = position[4] # GNSS positioning mode (2D, 3D)
+            fixinfo['cog']   = position[5] # Course Over Ground
+            fixinfo['kmh']   = position[6] # Speed over ground, expressed as Km/h.
+            fixinfo['knt']   = position[7] # Speed over ground, expressed as knots.
+            fixinfo['nsat']  = position[8] # Number of fixed satellites.
 
             # use the agent to publish values to the ZDM
             # Just open the device page from VSCode and check that data is incoming
-            agent.publish({"latitude":lat, "longitude":lon})
+            agent.publish(fixinfo, "fix")
             sleep(5000)
-            print("latitude, longitude: ", lat, lon)
             # The agent automatically handles connections and reconnections
             print("ZDM is online:    ",agent.online())
             # And provides info on the current firmware version
@@ -84,6 +93,7 @@ while True:
 
         cellular.stop()
         print("disconnected from cellular")
+
     except CellularBadAPN:
         print("Bad APN")
         cellular.stop()
