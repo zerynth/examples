@@ -8,6 +8,9 @@
 # without changing a line of code.
 from bsp import board
 
+# Uncomment the following to use the EXP-Connect board with ZM1-DB
+#from expansions import connect
+
 # The Zerynth Device Manager is the entrypoint for the zCloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your
@@ -24,18 +27,22 @@ position = (0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0)
 # Initialize the board
 board.init()
 
+# Uncomment the following to use the EXP-Connect board with ZM1-DB
+# This adds the EXP-Connect as expansion and initialize the board.
+#board.next_expansion(connect, (0,))
+
 print("configuring cellular...")
 cellular.configure()
 
 print("initializing cellular gnss submodule...")
-gnss = cellular.gnss()
+cellular.gnss.start()
 
 # The very first GNSS fix can take some time since the
 # hardware module has to lock all the required satellites.
 # Here is the initial fix with long timeout.
 print("Doing the initial GPS fix (up to 120secs)...")
 try:
-    position = gnss.fix(timeout=120)
+    position = cellular.gnss.fix(timeout=120)
 except GNSSTimeoutError:
     print("Initial gps fix timed out")
 except Exception as e:
@@ -48,9 +55,13 @@ while True:
         print("connecting to cellular...")
         cellular.start()
         print("connected!",cellular.info())
+        print("cellinfo: ",cellular.cellinfo())
 
         # the Agent class implements all the logic to talk with the ZDM
-        agent = zdm.Agent()
+        # By setting the cellular_source and gnss_source, the ZDM agent
+        # periodically sends to the cloud GSM cell and GPS position informations.
+        # GSM and GPS data are visualized on the Cloud UI in the device section.
+        agent = zdm.Agent(cellular_source=cellular, gnss_source=cellular.gnss)
         # just start it
         agent.start()
 
@@ -62,7 +73,7 @@ while True:
             # Try to get GPS position with an adaptive fix timeout
             tout = 10+min(max_incr, c)*k  # linear increment with ceiling
             try:
-                position = gnss.fix(timeout=tout)
+                position = cellular.gnss.fix(timeout=tout)
                 print("fixinfo: ", position)
                 c = 0
             except GNSSTimeoutError:
