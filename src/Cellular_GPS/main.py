@@ -8,7 +8,7 @@
 # without changing a line of code.
 from bsp import board
 
-# Uncomment the following to use the EXP-Connect board with ZM1-DB
+# Uncomment the following to use the EXP-CONNECT board with ZM1-DB
 #from expansions import connect
 
 # The Zerynth Device Manager is the entrypoint for the zCloud.
