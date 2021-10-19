@@ -66,6 +66,11 @@ root:
     - Cellular_Simple
     - Cellular_GPS
     - Cellular_GPS_Telemetry
+  - title: AI/ML
+    tag: AI
+    hint: Artificial Intelligence with Tensorflow
+    examples:
+    - Tensorflow
 
 examples:
   - title: Hello Zerynth
@@ -208,4 +213,8 @@ examples:
     name: Cellular_GPS_Telemetry
     folder: Cellular_GPS_Telemetry
     hint: Cellular with GPS tracking and telemetry
+  - title: Tensorflow
+    name: Tensorflow
+    folder: Tensorflow
+    hint: Tensorflow AI with sin(x) model
 
