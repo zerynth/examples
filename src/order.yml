@@ -37,7 +37,7 @@ root:
   - title: Expansions
     tag: Expansions
     hint: Expansions
-    examples: 
+    examples:
     - IO_relay_library
     - IO_adc_channel
     - IO_interrupt
@@ -49,7 +49,7 @@ root:
   - title: 4ZeroBox
     tag: 4ZeroBox
     hint: 4ZeroBox
-    examples: 
+    examples:
     - Hello_4ZeroBox
     - ADC_sensor_reading_4ZeroBox
     - 4ZeroBox_modbus_serial_interface
@@ -59,7 +59,19 @@ root:
     - 4ZeroBox_meets_ZDM_ethernet
     - Firmware_over_the_air_update
     - Industrial_Kit
-          
+  - title: Cellular
+    tag: cellular
+    hint: Cellular
+    examples:
+    - Cellular_Simple
+    - Cellular_GPS
+    - Cellular_GPS_Telemetry
+  - title: AI/ML
+    tag: AI
+    hint: Artificial Intelligence with Tensorflow
+    examples:
+    - Tensorflow
+
 examples:
   - title: Hello Zerynth
     name: Hello_Zerynth
@@ -157,15 +169,15 @@ examples:
     name: IO_interrupt
     folder: Exp_Io_interrupt
     hint: IO interrupt on opto-isolated
-  - title: RELAY  AC circuit with an industrial lamp 
-    name: RELAY_ac_circuit_with_an_industrial_lamp 
+  - title: RELAY  AC circuit with an industrial lamp
+    name: RELAY_ac_circuit_with_an_industrial_lamp
     folder: Exp_relay
-    hint: RELAY ac circuit with an industrial lamp 
+    hint: RELAY ac circuit with an industrial lamp
   - title: SER Can Bus
     name: SER_can
     folder: Exp_ser_can
     hint: SER can
-  - title: SER RS232 
+  - title: SER RS232
     name: SER_rs232
     folder: Exp_ser_rs232
     hint: SER rs232
@@ -189,4 +201,20 @@ examples:
     name: Industrial_Kit
     folder: Industrial_Kit
     hint: Industrial IoT Kit
+  - title: Cellular Simple
+    name: Cellular_Simple
+    folder: Cellular_Simple
+    hint: Cellular Simple
+  - title: Cellular with GPS
+    name: Cellular_GPS
+    folder: Cellular_GPS
+    hint: Cellular with GPS
+  - title: Cellular with GPS tracking and telemetry
+    name: Cellular_GPS_Telemetry
+    folder: Cellular_GPS_Telemetry
+    hint: Cellular with GPS tracking and telemetry
+  - title: Tensorflow
+    name: Tensorflow
+    folder: Tensorflow
+    hint: Tensorflow AI with sin(x) model
 
