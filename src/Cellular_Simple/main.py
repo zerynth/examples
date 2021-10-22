@@ -8,6 +8,9 @@
 # without changing a line of code.
 from bsp import board
 
+# Uncomment the following to use the EXP-CONNECT board with ZM1-DB
+#from expansions import connect
+
 # The Zerynth Device Manager is the entrypoint for the zCloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your
@@ -21,6 +24,10 @@ from networking import cellular
 
 # Initialize the board
 board.init()
+
+# Uncomment the following to use the EXP-Connect board with ZM1-DB
+# This adds the EXP-Connect as expansion and initialize the board.
+#board.next_expansion(connect, (0,))
 
 print("configuring cellular...")
 cellular.configure()
@@ -69,14 +76,18 @@ while True:
 
         cellular.stop()
         print("disconnected from cellular")
+
     except CellularBadAPN:
         print("Bad APN")
         cellular.stop()
+        cellular.deinit()
     except CellularModemInitError:
         print("Modem initialization failed")
+        cellular.deinit()
     except CellularException:
         print("Generic Cellular Exception")
         cellular.stop()
+        cellular.deinit()
     except Exception as e:
         print("Exception: ", e)
         raise e
