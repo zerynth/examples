@@ -71,6 +71,15 @@ root:
     hint: Artificial Intelligence with Tensorflow
     examples:
     - Tensorflow
+  - title: Standard Library
+    hint: Zerynth SDK standard library
+    tag: stdlib
+    tags:
+    - title: math
+      hint: Math modules
+      tag: math
+      examples:
+      - FFT
 
 examples:
   - title: Hello Zerynth
@@ -217,4 +226,7 @@ examples:
     name: Tensorflow
     folder: Tensorflow
     hint: Tensorflow AI with sin(x) model
-
+  - title: Fast Fourier Transform
+    name: FFT
+    folder: Fft
+    hint: Fast Fourier Transform
