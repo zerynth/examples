@@ -33,7 +33,6 @@ root:
         examples:
           - ZDM_Simple
           - ZDM_Jobs
-          - ZDM_Conditions
   - title: Expansions
     tag: Expansions
     hint: Expansions
@@ -118,10 +117,6 @@ examples:
     name: ZDM_Jobs
     folder: ZDM_Jobs
     hint: ZDM Jobs
-  - title: ZDM Conditions
-    name: ZDM_Conditions
-    folder: ZDM_Conditions
-    hint: ZDM Conditions
   - title: Hello 4ZeroBox
     name: Hello_4ZeroBox
     folder: Hello_4ZeroBox
