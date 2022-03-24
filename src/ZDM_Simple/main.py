@@ -10,7 +10,7 @@ from bsp import board
 
 # The Zerynth Device Manager is the entrypoint for the zCloud.
 # Let's connect and send data to the ZDM with a simple example.
-# Before exeuting this code, please associate the device with your
+# Before executing this code, please associate the device with your
 # ZDM account by selecting "ZDM target" in VSCode Control Panel.
 
 # Let's import the zdm module
