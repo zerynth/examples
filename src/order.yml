@@ -79,6 +79,11 @@ root:
       tag: math
       examples:
       - FFT
+  - title: Components
+    hint: Zerynth SDK library components
+    tag: components
+    examples:
+    - DHT11
 
 examples:
   - title: Hello Zerynth
@@ -225,3 +230,7 @@ examples:
     name: FFT
     folder: Fft
     hint: Fast Fourier Transform
+  - title: DHT11 Humidity and temperature sensor
+    name: DHT11
+    folder: DHT11
+    hint: I2C DHT11 humidity and temperature
