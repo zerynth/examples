@@ -113,11 +113,11 @@ iim.set_fifo_mode(0b01)
 iim.set_fifo_wm(2048)
 
 # Setup interrupt gpio on eva-board
-gpio.mode(D33, INPUT_PULLUP)
-gpio.on_fall(D33, get_fifo_data)
+gpio.mode(D26, INPUT_PULLUP)
+gpio.on_fall(D26, get_fifo_data)
 # Set iim42652 interrupt configuration:
-# pin1, pulse mode, open drain, active low
-iim.set_int_cfg(1, 0, 0, 0)
+# pin1, pulse mode, pp, active low
+iim.set_int_cfg(1, 0, 1, 0)
 # Set interrupt clears on fifo read
 iim.set_int_clear_cfg(2, 2, 2)
 # Set int sources on pin 1 as fifo full and wm reached
