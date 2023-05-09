@@ -33,6 +33,10 @@ root:
         examples:
           - ZDM_Simple
           - ZDM_Jobs
+      - title: On Premise
+        tag: zdm
+        hint: zdm
+        examples:
           - ZDM_OnPremise
   - title: Expansions
     tag: Expansions
