@@ -33,6 +33,11 @@ root:
         examples:
           - ZDM_Simple
           - ZDM_Jobs
+      - title: On Premise
+        tag: zdm
+        hint: zdm
+        examples:
+          - ZDM_OnPremise
   - title: Expansions
     tag: Expansions
     hint: Expansions
@@ -117,6 +122,10 @@ examples:
     name: ZDM_Jobs
     folder: ZDM_Jobs
     hint: ZDM Jobs
+  - title: ZDM On Premise
+    name: ZDM_OnPremise
+    folder: ZDM_OnPremise
+    hint: ZDM On Premise
   - title: Hello 4ZeroBox
     name: Hello_4ZeroBox
     folder: Hello_4ZeroBox
